@@ -13,7 +13,7 @@ For Linux users:
 
 Make sure you have a DESKTOP ENVIRONMENT !!!
 
-step1: Install Necessary Programs
+STEP1: Install Necessary Programs
 
 if you're using Debian, Fedora or Arch, vulkan is available from your repository.
 Just type install command in console.
@@ -75,7 +75,7 @@ Download Manjaro ARM image and burn it to your SD card, because only Manjaro ARM
 
 
 
-step2: Test the installation
+STEP2: Test the installation
 
 type following commands:
 
@@ -86,7 +86,7 @@ If no error occurs, vulkan is set correctly.
 
 
 
-step2: Download Codes
+STEP3: Download Codes
 
 Download via ZIP
 
@@ -94,7 +94,7 @@ Download via ZIP
 
 
 
-step3: use Makefile
+STEP4: use Makefile
 
     make            #install
     ./op            #run
