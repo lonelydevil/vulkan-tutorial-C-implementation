@@ -68,7 +68,7 @@ NVIDIA GPU:
 
 For Raspberry Pi:
 
-Download Manjaro ARM image and burn it to your SD card, because only Manjaro ARM has built-in support for vulkan.
+Download Manjaro ARM image and burn it to your SD card, because only [Manjaro ARM](https://manjaro.org/download/#raspberry-pi-4-xfce) has built-in support for vulkan.
 
     sudo pacman -S base-devel vulkan-devel glslang xorg-drivers vulkan-broadcom --needed
 
