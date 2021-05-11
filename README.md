@@ -1,11 +1,13 @@
 # vulkan-tutorial-C-implementation
 <br />
-A C implementation from [vulkan-tutorial.com](https://vulkan-tutorial.com)
+<br />
+A C implementation from <a href="https://vulkan-tutorial.com">vulkan-tutorial.com</a>
 <br />
 <br />
 <br />
 
 # Why use C ?
+<br />
 <br />
 Because C code has simple logic and it suits newbies who doesn't know C++ hardcore features or STL stuff.
 <br />
@@ -14,7 +16,9 @@ Because C code has simple logic and it suits newbies who doesn't know C++ hardco
 
 # How to build ?
 <br />
+<br />
 For Linux users:
+<br />
 <br />
 Make sure you have a DESKTOP ENVIRONMENT !!!
 <br />
@@ -22,6 +26,7 @@ Make sure you have a DESKTOP ENVIRONMENT !!!
 <br />
 <br />
 STEP1: Install Necessary Programs
+<br />
 <br />
 if you're using Debian, Fedora or Arch, vulkan is available from your repository.
 Just type install command in console.
@@ -31,6 +36,7 @@ Just type install command in console.
 For Debian(or Ubuntu, or distros based on debian):
     
     sudo apt install libvulkan1 vulkan-mesa-drivers vulkan-utils gcc make glslang
+<br />
 <br />
 NVIDIA GPU:
     
@@ -45,6 +51,7 @@ For Feodra:
     
     sudo dnf install vulkan vulkan-info vulkan-tools gcc make glslang
 <br />
+<br />
 NVIDIA GPU:
     
     dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -57,17 +64,21 @@ For Arch Linux(or Manjaro):
 
     sudo pacman -S base-devel vulkan-devel glslang xorg-drivers --needed
 <br />
+<br />
 INTEL GPU:
 
     sudo pacman -S vulkan-intel --needed
+<br />
 <br />
 AMD READEON GPU:
 
     sudo pacman -S vulkan-radeon --needed
 <br />
+<br />
 AMD RX GPU:
 
     sudo pacman -S amdvlk --needed
+<br />
 <br />
 NVIDIA GPU:
 
@@ -77,7 +88,8 @@ NVIDIA GPU:
 <br />
 For Raspberry Pi:
 <br />
-Download [Manjaro ARM](https://manjaro.org/download/#raspberry-pi-4-xfce) image and burn it to your SD card, because only Manjaro ARM has built-in support for vulkan.
+<br />
+Download <a href="https://manjaro.org/download/#raspberry-pi-4-xfce">Manjaro ARM</a> image and burn it to your SD card, because only Manjaro ARM has built-in support for vulkan.
 
     sudo pacman -S base-devel vulkan-devel glslang xorg-drivers vulkan-broadcom --needed
 <br />
@@ -87,10 +99,12 @@ Download [Manjaro ARM](https://manjaro.org/download/#raspberry-pi-4-xfce) image 
 <br />
 STEP2: Test the installation
 <br />
+<br />
 type following commands:
 
     vulkaninfo
     vkcube
+<br />
 <br />
 If no error occurs, vulkan is set correctly.
 <br />
@@ -100,6 +114,7 @@ If no error occurs, vulkan is set correctly.
 <br />
 STEP3: Download Codes
 <br />
+<br />
 Download via ZIP or Release Tarball
 <br />
 <br />
@@ -107,6 +122,8 @@ Download via ZIP or Release Tarball
 <br />
 <br />
 STEP4: use Makefile
+<br />
+<br />
 
     make            #install
     ./op            #run
@@ -118,7 +135,8 @@ STEP4: use Makefile
 <br />
 For Windows users:
 <br />
-I don't use Windows for programming, so follow the guide from [The Original Site](https://vulkan-tutorial.com/Development_environment).
+<br />
+I don't use Windows for programming, so follow the guide from <a href="https://vulkan-tutorial.com/Development_environment">The Original Site</a>.
 <br />
 By the way, Makefile is useless on Windows, copy the code in Visual Studio project and build it.
 <br />
@@ -128,9 +146,13 @@ By the way, Makefile is useless on Windows, copy the code in Visual Studio proje
 <br />
 For MacOS users:
 <br />
-[MoltenVK official github page](https://github.com/KhronosGroup/MoltenVK)
+<br />
+<a href="https://github.com/KhronosGroup/MoltenVK">MoltenVK official github page</a>
+<br />
 <br />
 OR:
+<br />
+<br />
 
     brew install vulkan-headers molten-vk gcc make glslang
 <br />
