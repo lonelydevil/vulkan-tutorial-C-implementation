@@ -35,21 +35,19 @@ Just type install command in console.
 <br />
 For Debian(or Ubuntu, or distros based on debian):
     
-    sudo apt install libvulkan1 vulkan-mesa-drivers vulkan-utils gcc make glslang
+    sudo apt install libvulkan-dev mesa-vulkan-drivers vulkan-validationlayers-dev vulkan-tools vulkan-utils gcc make glslang-dev libglfw3-dev
 <br />
 <br />
 NVIDIA GPU:
     
-    sudo add-apt-repository ppa:graphics-drivers/ppa
-    sudo apt upgrade
-    sudo apt install nvidia-graphics-drivers-396 nvidia-settings
+    sudo apt install nvidia-legacy-390xx-vulkan-icd nvidia-vulkan-icd nvidia-vulkan-common
 <br />
 <br />
 <br />
 <br />
 For Feodra:
     
-    sudo dnf install vulkan vulkan-info vulkan-tools gcc make glslang
+    sudo dnf install vulkan vulkan-headers vulkan-validation-layers vulkan-tools gcc make glslang glfw
 <br />
 <br />
 NVIDIA GPU:
@@ -62,7 +60,7 @@ NVIDIA GPU:
 <br />
 For Arch Linux(or Manjaro):
 
-    sudo pacman -S base-devel vulkan-devel glslang xorg-drivers --needed
+    sudo pacman -S base-devel vulkan-devel glslang xorg-drivers glfw-x11 --needed
 <br />
 <br />
 INTEL GPU:
@@ -91,7 +89,7 @@ For Raspberry Pi:
 <br />
 Download <a href="https://manjaro.org/download/#raspberry-pi-4-xfce">Manjaro ARM</a> image and burn it to your SD card, because only Manjaro ARM has built-in support for vulkan.
 
-    sudo pacman -S base-devel vulkan-devel glslang xorg-drivers vulkan-broadcom --needed
+    sudo pacman -S base-devel vulkan-devel glslang xorg-drivers glfw-x11 vulkan-broadcom --needed
 <br />
 <br />
 <br />
@@ -154,7 +152,7 @@ OR:
 <br />
 <br />
 
-    brew install vulkan-headers molten-vk gcc make glslang
+    brew install vulkan-headers molten-vk gcc make glslang glew glfw
 <br />
 <br />
 <br />
