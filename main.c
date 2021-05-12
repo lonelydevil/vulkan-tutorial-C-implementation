@@ -570,7 +570,7 @@ int main(int argc,char **argv){
 	printf("render pass created.\n");
 	//
 	//
-	//pipeline creation part		line_573 to line_931
+	//pipeline creation part		line_573 to line_933
 	//
 	//load shader
 	//
@@ -931,7 +931,7 @@ int main(int argc,char **argv){
 	printf("vertex shader binaries released.\n");
 	//
 	//
-	//framebuffer creation		line_932 to line_963
+	//framebuffer creation		line_934 to line_965
 	//
 	//create framebuffer
 	//
@@ -963,7 +963,7 @@ int main(int argc,char **argv){
 	}
 	//
 	//
-	//command buffer creation		line_964 to line_997
+	//command buffer creation		line_966 to line_999
 	//
 	//create command pool
 	//
@@ -997,7 +997,7 @@ int main(int argc,char **argv){
 	printf("command buffers allocated.\n");
 	//
 	//
-	//render preparation		line998 to line1058
+	//render preparation		line1000 to line1060
 	//
 	VkCommandBufferBeginInfo
 		cmd_buff_begin_infos[swap_image_count];
@@ -1058,9 +1058,9 @@ int main(int argc,char **argv){
 	}
 	//
 	//
-	//semaphores and fences creation part		line_1059 to line_1099
+	//semaphores and fences creation part		line_1061 to line_1101
 	//
-	uint32_t max_frames=swap_image_count;
+	uint32_t max_frames=2;
 	VkSemaphore
 		semps_img_avl[max_frames];
 	VkSemaphore
@@ -1099,7 +1099,7 @@ int main(int argc,char **argv){
 	}
 	//
 	//
-	//main present part		line_1100 to line_1193
+	//main present part		line_1102 to line_1195
 	//
 	printf("\n");
 	while(!glfwWindowShouldClose(window)){
@@ -1193,7 +1193,7 @@ int main(int argc,char **argv){
 	printf("command buffers finished.\n");
 	//
 	//
-	//destroy everything		line_1194 to line_1270
+	//destroy everything		line_1196 to line_1272
 	//
 	//free command buffer
 	//
