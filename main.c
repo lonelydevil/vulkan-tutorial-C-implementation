@@ -775,6 +775,8 @@ int main(int argc,char **argv){
 	rast_cre_info
 		.depthBiasConstantFactor=0.0f;
 	rast_cre_info
+		.depthBiasClamp=0.0f;
+	rast_cre_info
 		.depthBiasSlopeFactor=0.0f;
 	rast_cre_info
 		.lineWidth=1.0f;
