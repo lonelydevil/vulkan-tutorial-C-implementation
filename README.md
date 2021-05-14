@@ -160,7 +160,7 @@ OR:
 <br />
 <br />
 
-# How to change color of The Background or The Triangle ?
+# How to change the color of The Background or The Triangle ?
 <br />
 <br />
 BACKGROUND COLOR:
