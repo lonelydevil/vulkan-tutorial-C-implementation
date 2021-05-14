@@ -20,37 +20,40 @@ Because C code has simple logic and it suits newbies who doesn't know C++ hardco
 For Linux users:
 <br />
 <br />
-Make sure you have a DESKTOP ENVIRONMENT !!!
+&emsp;  &emsp;  Make sure you have a DESKTOP ENVIRONMENT !!!
 <br />
 <br />
 <br />
 <br />
-STEP1: Install Necessary Programs
-<br />
-<br />
-if you're using Debian, Fedora or Arch, vulkan is available from your repository.
-Just type install command in console.
+&emsp;  &emsp;  STEP1: Install Necessary Programs
 <br />
 <br />
 <br />
-For Debian(or Ubuntu, or distros based on debian):
+&emsp;  &emsp;  If you're using Debian, Fedora or Arch, vulkan is available from your repository.
+<br />
+<br />
+&emsp;  &emsp;  Just type install command in console.
+<br />
+<br />
+<br />
+&emsp;  &emsp;  For Debian(or Ubuntu, or distros based on debian):
     
     sudo apt install libvulkan-dev mesa-vulkan-drivers vulkan-validationlayers-dev vulkan-tools vulkan-utils gcc make glslang-dev libglfw3-dev
 <br />
 <br />
-NVIDIA GPU:
+&emsp;  &emsp;  NVIDIA GPU:
     
     sudo apt install nvidia-legacy-390xx-vulkan-icd nvidia-vulkan-icd nvidia-vulkan-common
 <br />
 <br />
 <br />
 <br />
-For Feodra:
+&emsp;  &emsp;  For Feodra:
     
     sudo dnf install vulkan vulkan-headers vulkan-validation-layers vulkan-tools gcc make glslang glfw
 <br />
 <br />
-NVIDIA GPU:
+&emsp;  &emsp;  NVIDIA GPU:
     
     dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
     dnf install xorg-x11-drv-nvidia akmod-nvidia
@@ -58,36 +61,36 @@ NVIDIA GPU:
 <br />
 <br />
 <br />
-For Arch Linux(or Manjaro):
+&emsp;  &emsp;  For Arch Linux(or Manjaro):
 
     sudo pacman -S base-devel vulkan-devel glslang xorg-drivers glfw-x11 --needed
 <br />
 <br />
-INTEL GPU:
+&emsp;  &emsp;  INTEL GPU:
 
     sudo pacman -S vulkan-intel --needed
 <br />
 <br />
-AMD READEON GPU:
+&emsp;  &emsp;  AMD READEON GPU:
 
     sudo pacman -S vulkan-radeon --needed
 <br />
 <br />
-AMD RX GPU:
+&emsp;  &emsp;  AMD RX GPU:
 
     sudo pacman -S amdvlk --needed
 <br />
 <br />
-NVIDIA GPU:
+&emsp;  &emsp;  NVIDIA GPU:
 
     sudo pacman -S nvidia-utils --needed
 <br />
 <br />
 <br />
-For Raspberry Pi:
+&emsp;  &emsp;  For Raspberry Pi:
 <br />
 <br />
-Download <a href="https://manjaro.org/download/#raspberry-pi-4-xfce">Manjaro ARM</a> image and burn it to your SD card, because only Manjaro ARM has built-in support for vulkan.
+&emsp;  &emsp;  Download <a href="https://manjaro.org/download/#raspberry-pi-4-xfce">Manjaro ARM</a> image and burn it to your SD card, because only Manjaro ARM has built-in support for vulkan.
 
     sudo pacman -S base-devel vulkan-devel glslang xorg-drivers glfw-x11 vulkan-broadcom --needed
 <br />
@@ -95,31 +98,31 @@ Download <a href="https://manjaro.org/download/#raspberry-pi-4-xfce">Manjaro ARM
 <br />
 <br />
 <br />
-STEP2: Test the installation
+&emsp;  &emsp;  STEP2: Test the installation
 <br />
 <br />
-type following commands:
+&emsp;  &emsp;  type following commands:
 
     vulkaninfo
     vkcube
 <br />
 <br />
-If no error occurs, vulkan is set correctly.
+&emsp;  &emsp;  If no error occurs, vulkan is set correctly.
 <br />
 <br />
 <br />
 <br />
 <br />
-STEP3: Download Codes
+&emsp;  &emsp;  STEP3: Download Codes
 <br />
 <br />
-Download via ZIP or Release Tarball
+&emsp;  &emsp;  Download via ZIP or Release Tarball
 <br />
 <br />
 <br />
 <br />
 <br />
-STEP4: use Makefile
+&emsp;  &emsp;  STEP4: use Makefile
 <br />
 <br />
 
@@ -156,4 +159,18 @@ OR:
 <br />
 <br />
 <br />
+
+# How to change color of The Background or The Triangle ?
 <br />
+<br />
+BACKGROUND COLOR:
+<br />
+<br />
+Search "VkClearValue" in <a href="https://github.com/lonelydevil/vulkan-tutorial-C-implementation/blob/main/main.c">main.c</a>, the four-floating-number-array after clear_val is the background color, represents "R", "G", "B" and "A", curretly only RGB value has effect.
+<br />
+<br />
+<br />
+TRIANGLE COLOR:
+<br />
+<br />
+Search "vec3 colors" in <a href="https://github.com/lonelydevil/vulkan-tutorial-C-implementation/blob/main/shader.vert">shader.vert</a>, there are three three-floating-number-array after that. It's the RGB value of three vertex colors of the triangle.
