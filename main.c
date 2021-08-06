@@ -67,7 +67,7 @@ int main(int argc,char **argv){
 	printf("instance created.\n");
 	//
 	//
-	//device creation part		line_70 to line_259
+	//device creation part		line_70 to line_261
 	//
 	//enum physical device
 	//
@@ -127,12 +127,14 @@ int main(int argc,char **argv){
 		for(uint32_t i=0;i<discrete_gpu_count;i++){
 			if(phy_devis_mem_total[i]>max_mem_size){
 				phy_devi_best_index=discrete_gpu_list[i];
+				max_mem_size=phy_devis_mem_total[i];
 			}
 		}
 	}else if(intergrated_gpu_count!=0){
 		for(uint32_t i=0;i<intergrated_gpu_count;i++){
 			if(phy_devis_mem_total[i]>max_mem_size){
 				phy_devi_best_index=intergrated_gpu_list[i];
+				max_mem_size=phy_devis_mem_total[i];
 			}
 		}
 	}
@@ -148,7 +150,7 @@ int main(int argc,char **argv){
 	}else{
 		printf("unknown\n");
 	}
-	printf("memory total:%lu\n",phy_devis_mem_total[
+	printf("memory total:%llu\n",phy_devis_mem_total[
 		phy_devi_best_index
 	]);
 	VkPhysicalDevice *phy_best_devi=
@@ -179,7 +181,7 @@ int main(int argc,char **argv){
 		dev_q_cre_infos[i].flags=0;
 		dev_q_cre_infos[i].queueFamilyIndex=i;
 		dev_q_cre_infos[i].queueCount=qf_q_count[i];
-		float q_prior[1]={0.5f};
+		float q_prior[1]={1.0f};
 		dev_q_cre_infos[i].pQueuePriorities=q_prior;
 	}
 	printf("using %d queue families.\n",qf_prop_count);
@@ -222,8 +224,8 @@ int main(int argc,char **argv){
 	uint32_t qf_graph_count=0;
 	uint32_t qf_graph_list[qf_prop_count];
 	for(uint32_t i=0;i<qf_prop_count;i++){
-		if(qf_props[i].queueFlags
-				&VK_QUEUE_GRAPHICS_BIT!=0){
+		if((qf_props[i].queueFlags
+				&VK_QUEUE_GRAPHICS_BIT) != 0){
 			qf_graph_list[qf_graph_count]=i;
 			qf_graph_count++;
 		}
@@ -257,7 +259,7 @@ int main(int argc,char **argv){
 	}
 	//
 	//
-	//window and surface creation part		line_260 to line_274
+	//window and surface creation part		line_262 to line_276
 	//
 	//create window and surface
 	//
@@ -272,7 +274,7 @@ int main(int argc,char **argv){
 	printf("surface created.\n");
 	//
 	//
-	//swapchain and image view creation part		line_275 to line_474
+	//swapchain and image view creation part		line_277 to line_476
 	//
 	//verify surface support
 	//
@@ -472,7 +474,7 @@ int main(int argc,char **argv){
 	}
 	//
 	//
-	//render pass creation part		line_475 to line_572
+	//render pass creation part		line_477 to line_574
 	//
 	//fill attachment description
 	//
@@ -570,7 +572,7 @@ int main(int argc,char **argv){
 	printf("render pass created.\n");
 	//
 	//
-	//pipeline creation part		line_573 to line_933
+	//pipeline creation part		line_575 to line_935
 	//
 	//load shader
 	//
@@ -931,7 +933,7 @@ int main(int argc,char **argv){
 	printf("vertex shader binaries released.\n");
 	//
 	//
-	//framebuffer creation		line_934 to line_965
+	//framebuffer creation		line_936 to line_967
 	//
 	//create framebuffer
 	//
@@ -963,7 +965,7 @@ int main(int argc,char **argv){
 	}
 	//
 	//
-	//command buffer creation		line_966 to line_999
+	//command buffer creation		line_968 to line_1001
 	//
 	//create command pool
 	//
@@ -997,7 +999,7 @@ int main(int argc,char **argv){
 	printf("command buffers allocated.\n");
 	//
 	//
-	//render preparation		line1000 to line1060
+	//render preparation		line1002 to line1062
 	//
 	VkCommandBufferBeginInfo
 		cmd_buff_begin_infos[swap_image_count];
@@ -1058,7 +1060,7 @@ int main(int argc,char **argv){
 	}
 	//
 	//
-	//semaphores and fences creation part		line_1061 to line_1101
+	//semaphores and fences creation part		line_1063 to line_1103
 	//
 	uint32_t max_frames=2;
 	VkSemaphore
@@ -1099,7 +1101,7 @@ int main(int argc,char **argv){
 	}
 	//
 	//
-	//main present part		line_1102 to line_1195
+	//main present part		line_1104 to line_1197
 	//
 	printf("\n");
 	while(!glfwWindowShouldClose(window)){
@@ -1193,7 +1195,7 @@ int main(int argc,char **argv){
 	printf("command buffers finished.\n");
 	//
 	//
-	//destroy everything		line_1196 to line_1272
+	//destroy everything		line_1198 to line_1274
 	//
 	//free command buffer
 	//

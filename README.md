@@ -1,176 +1,83 @@
-# vulkan-tutorial-C-implementation
-<br />
-<br />
-A C implementation from <a href="https://vulkan-tutorial.com">vulkan-tutorial.com</a>
-<br />
-<br />
-<br />
+# About this project
 
-# Why use C ?
-<br />
-<br />
-Because C code has simple logic and it suits newbies who doesn't know C++ hardcore features or STL stuff.
-<br />
-<br />
-<br />
+This is the C-implementation code of vulkan triangle based on [**vulkan-tutorial.com**][VK_TUT]
 
-# How to build ?
-<br />
-<br />
-For Linux users:
-<br />
-<br />
-&emsp;  &emsp;  Make sure you have a DESKTOP ENVIRONMENT !!!
-<br />
-<br />
-<br />
-<br />
-&emsp;  &emsp;  STEP1: Install Necessary Programs
-<br />
-<br />
-<br />
-&emsp;  &emsp;  If you're using Debian, Fedora or Arch, vulkan is available from your repository.
-<br />
-<br />
-&emsp;  &emsp;  Just type install command in console.
-<br />
-<br />
-<br />
-&emsp;  &emsp;  For Debian(or Ubuntu, or distros based on debian):
-    
-    sudo apt install libvulkan-dev mesa-vulkan-drivers vulkan-validationlayers-dev vulkan-tools vulkan-utils gcc make glslang-dev libglfw3-dev
-<br />
-<br />
-&emsp;  &emsp;  NVIDIA GPU:
-    
-    sudo apt install nvidia-legacy-390xx-vulkan-icd nvidia-vulkan-icd nvidia-vulkan-common
-<br />
-<br />
-<br />
-<br />
-&emsp;  &emsp;  For Feodra:
-    
-    sudo dnf install vulkan vulkan-headers vulkan-validation-layers vulkan-tools gcc make glslang glfw
-<br />
-<br />
-&emsp;  &emsp;  NVIDIA GPU:
-    
-    dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-    dnf install xorg-x11-drv-nvidia akmod-nvidia
-<br />
-<br />
-<br />
-<br />
-&emsp;  &emsp;  For Arch Linux(or Manjaro):
+# Why use C instead of C++?
 
-    sudo pacman -S base-devel vulkan-devel glslang xorg-drivers glfw-x11 --needed
-<br />
-<br />
-&emsp;  &emsp;  INTEL GPU:
+Because some newcomers don't know C++ or STL. Implement the code with C will help them have a better understanding with the tutorial.
 
-    sudo pacman -S vulkan-intel --needed
-<br />
-<br />
-&emsp;  &emsp;  AMD READEON GPU:
+# How many chapters this code had actually implemented?
 
-    sudo pacman -S vulkan-radeon --needed
-<br />
-<br />
-&emsp;  &emsp;  AMD RX GPU:
+From [**chapter 1**][TUT_START] to [**chapter 16**][TUT_END], you can view comments from the source code to see how they're implemented.
 
-    sudo pacman -S amdvlk --needed
-<br />
-<br />
-&emsp;  &emsp;  NVIDIA GPU:
+# How to build it?
 
-    sudo pacman -S nvidia-utils --needed
-<br />
-<br />
-<br />
-&emsp;  &emsp;  For Raspberry Pi:
-<br />
-<br />
-&emsp;  &emsp;  Download <a href="https://manjaro.org/download/#raspberry-pi-4-xfce">Manjaro ARM</a> image and burn it to your SD card, because only Manjaro ARM has built-in support for vulkan.
+You shouldn't stick to the [**Original Tutorial**][TUT_BUILD] because this code contains VLA(Variable Length Array) features, which is not supported in C++, especially Visual C++.
 
-    sudo pacman -S base-devel vulkan-devel glslang xorg-drivers glfw-x11 vulkan-broadcom --needed
-<br />
-<br />
-<br />
-<br />
-<br />
-&emsp;  &emsp;  STEP2: Test the installation
-<br />
-<br />
-&emsp;  &emsp;  type following commands:
+**FOR WINDOWS USERS**
 
-    vulkaninfo
-    vkcube
-<br />
-<br />
-&emsp;  &emsp;  If no error occurs, vulkan is set correctly.
-<br />
-<br />
-<br />
-<br />
-<br />
-&emsp;  &emsp;  STEP3: Download Codes
-<br />
-<br />
-&emsp;  &emsp;  Download via ZIP or Release Tarball
-<br />
-<br />
-<br />
-<br />
-<br />
-&emsp;  &emsp;  STEP4: use Makefile
-<br />
-<br />
+You need to install [**VulkanSDK**][WIN_VKSDK], [**MinGW**][WIN_GCC](GNU C/C++ Compiler for Windows), [**CMake**][WIN_CMAKE]. Then download and extract [**GLFW prebuild library for windows**][WIN_GLFW_LIB] (and move it under C:/ if possible).
 
-    make            #install
-    ./op            #run
-    make cl         #remove
-<br />
-<br />
-<br />
-<br />
-<br />
-For Windows users:
-<br />
-<br />
-I don't use Windows for programming, so follow the guide from <a href="https://vulkan-tutorial.com/Development_environment">The Original Site</a>.
-<br />
-By the way, Makefile is useless on Windows, copy the code in Visual Studio project and build it.
-<br />
-<br />
-<br />
-<br />
-<br />
-For MacOS users:
-<br />
-<br />
-<a href="https://github.com/KhronosGroup/MoltenVK">MoltenVK official github page</a>
-<br />
-<br />
-OR:
-<br />
-<br />
+Now fetch this source code through [**Git**][GIT] or Direct-Download.
 
-    brew install vulkan-headers molten-vk gcc make glslang glew glfw
-<br />
-<br />
-<br />
+Then you should read through [**CMakeLists.txt**][BUILD_FILE] and modify the path to suit your needs.
+
+Then open the project folder press **Shift + Right Click** and select **open in terminal**, Type the following command(change argument with <> to what you want):
+
+```
+
+cmake -G "MinGW Makefiles" -B <your-build-dir>
+
+cmake --build <your-build-dir> --target all -j<numbers-of-threads>
+
+```
+
+If you don't like typing command line, **Double Click 'Windows_Build.bat'** and it will automatically build inside a subdirectory named **'build'**.
+
+**FOR LINUX USERS**
+
+You need to install a **Desktop Environment**, **vulkan driver for your GPU**, **gcc**, **glslang**, **cmake** and **glfw**, they should be included inside your package manager if you're using popular distro. If not, fetch their source code, build and install them manually.
+
+Now fetch this source code through [**Git**][GIT] or Direct-Download.
+
+Then read through [**CMakeLists.txt**][BUILD_FILE], confirm that the path was absolutely correct.
+
+Then open the terminal by pressing **Ctrl + Alt + T** to open the terminal(If your Desktop Environment doesn't support this shortcut, open it manually through application launcher), Type the following command:
+
+```
+
+cd <project-path>
+
+cmake -B <your-build-dir>
+
+cmake --build <your-build-dir> --target all -j<numbers-of-threads>
+
+```
+
+# Where is the program after the build steps?
+
+Open file manager(or use **cd** if you like typing command) and open your build folder, double click the program named 'vulkan-triangle', a colorful triangle with purple background will pop up.
 
 # How to change the color of The Background or The Triangle ?
-<br />
-<br />
-BACKGROUND COLOR:
-<br />
-<br />
-Search "VkClearValue" in <a href="https://github.com/lonelydevil/vulkan-tutorial-C-implementation/blob/main/main.c">main.c</a>, the four-floating-number-array after clear_val is the background color, represents "R", "G", "B" and "A", curretly only RGB value has effect.
-<br />
-<br />
-<br />
-TRIANGLE COLOR:
-<br />
-<br />
-Search "vec3 colors" in <a href="https://github.com/lonelydevil/vulkan-tutorial-C-implementation/blob/main/shader.vert">shader.vert</a>, there are three three-floating-number-array after that. It's the RGB value of three vertex colors of the triangle.
+
+**BACKGROUND COLOR**:
+
+Search "VkClearValue" in [**main.c**][CODE_MAIN], the four-floating-number-array after clear_val is the background color, represents "R", "G", "B" and "A", curretly only RGB value has effect.
+
+**TRIANGLE COLOR**:
+
+Search "vec3 colors" in [**shader.vert**][CODE_VERT], there are three three-floating-number-array after that. It's the RGB value of three vertex colors of the triangle.
+
+
+[VK_TUT]: https://vulkan-tutorial.com/
+[TUT_START]: https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Base_code
+[TUT_END]: https://vulkan-tutorial.com/Drawing_a_triangle/Drawing/Rendering_and_presentation
+[TUT_BUILD]: https://vulkan-tutorial.com/Development_environment
+[WIN_VKSDK]: https://vulkan.lunarg.com/sdk/home#windows
+[WIN_GCC]: http://mingw-w64.org/doku.php/download/mingw-builds
+[WIN_CMAKE]: https://cmake.org/download/
+[WIN_GLFW_LIB]: https://www.glfw.org/download.html
+[GIT]: https://git-scm.com/downloads
+[BUILD_FILE]: https://github.com/lonelydevil/vulkan-tutorial-C-implementation/blob/main/CMakeLists.txt
+[CODE_MAIN]: https://github.com/lonelydevil/vulkan-tutorial-C-implementation/blob/main/main.c
+[CODE_VERT]: https://github.com/lonelydevil/vulkan-tutorial-C-implementation/blob/main/shader.vert
