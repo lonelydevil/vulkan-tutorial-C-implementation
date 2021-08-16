@@ -1,3 +1,7 @@
+# NOTE!!!
+
+This project has been archived, a improved version is [**here**][VK_BETTER]
+
 # About this project
 
 This is the C-implementation code of vulkan triangle based on [**vulkan-tutorial.com**][VK_TUT]
@@ -69,6 +73,7 @@ Search "VkClearValue" in [**main.c**][CODE_MAIN], the four-floating-number-array
 Search "vec3 colors" in [**shader.vert**][CODE_VERT], there are three three-floating-number-array after that. It's the RGB value of three vertex colors of the triangle.
 
 
+[VK_BETTER]: https://github.com/lonelydevil/Vulkan-Triangle
 [VK_TUT]: https://vulkan-tutorial.com/
 [TUT_START]: https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Base_code
 [TUT_END]: https://vulkan-tutorial.com/Drawing_a_triangle/Drawing/Rendering_and_presentation
